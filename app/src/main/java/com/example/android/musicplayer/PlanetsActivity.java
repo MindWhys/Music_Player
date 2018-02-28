@@ -1,8 +1,10 @@
 package com.example.android.musicplayer;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -12,6 +14,16 @@ public class PlanetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
+
+        // my_child_toolbar is defined in the layout file
+        Toolbar myChildToolbar = (Toolbar) findViewById(R.id.my_child_toolbar);
+        setSupportActionBar(myChildToolbar);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
 
         ArrayList<SongData> songInfo = new ArrayList<SongData>();
 
